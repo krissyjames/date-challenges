@@ -4,10 +4,31 @@
 // Given an array of objects with `startDate` properties as strings (e.g., "2023-01-01"),
 // map through each array index and calculate the number of days since each date. Use `Date` objects, subtraction for
 // date difference, and `Math.floor` to round to whole days.
+const minute = 1000 * 60;
+const hour = minute * 60;
+const day = hour * 24;
 function calculateDaysSince(datesArray) {
-    
+    datesArray.map((datesArray) => {
+    let arr = [datesArray];
+    const startDate = new Date(arr);
+    console.log(startDate);
+    // const mockDate = new Date();
+    // console.log(mockDate);
+    let startDays = startDate/day;
+    console.log(startDays);
+    // let mockDays = Math.floor(mockDate/day);
+    // console.log(mockDays);
+    let daysSince = Math.floor((new Date() / day) - startDays);
+    console.log(daysSince);
+    if (startDate == "Invalid Date") {
+        return "Invalid Input"
+    } if (startDate != "Invalid Date") {
+        return daysSince;
+    }
+})
+// console.log(mapTest);
 }
-
+// calculateDaysSince();
 // Challenge 2: Filter Recent Dates
 // Given an array of date strings, return only the dates within the past 30 days.
 // Use `Date` object and the `filter` array method to find dates between 30 days ago and today.
@@ -17,10 +38,10 @@ function calculateDaysSince(datesArray) {
 // Challenge 3: Get Month Names
 // Given an array of `Date` objects, return an array of month names for each date.
 // Use `getMonth` method to get the month index and map it to a month name array.
-function getMonthNames(datesArray) {
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// function getMonthNames(datesArray) {
+//     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
-}
+// }
 
 // Challenge 4: Sort Dates in Ascending Order
 // Given an array of `Date` objects, return a new array sorted in ascending order.
@@ -56,10 +77,10 @@ function getMonthNames(datesArray) {
 // Challenge 10: Get Day of Week for Dates
 // Given an array of `Date` objects, return an array of the day of the week for each date.
 // Use `getDay` and map each day index to a day name array.
-function getDayOfWeekForDates(datesArray) {
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// function getDayOfWeekForDates(datesArray) {
+//     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
    
-}
+// }
 
 // Challenge 11: Find Most Recent Date
 // Given an array of `Date` objects, return the most recent date.
@@ -88,20 +109,20 @@ function getDayOfWeekForDates(datesArray) {
 
 module.exports = {
     calculateDaysSince,
-    filterRecentDates,
-    getMonthNames,
-    sortDatesAscending,
-    calculateAges,
-    groupDatesByYear,
-    findFirstMonday,
-    checkLeapYears,
-    addDaysToDates,
-    getDayOfWeekForDates,
-    findMostRecentDate,
-    getLastDayOfMonth,
-    calculateDuration,
-    listDatesOfWeekdayInMonth,
-    getDateDifferences
+    // filterRecentDates,
+    // getMonthNames,
+    // sortDatesAscending,
+    // calculateAges,
+    // groupDatesByYear,
+    // findFirstMonday,
+    // checkLeapYears,
+    // addDaysToDates,
+    // getDayOfWeekForDates,
+    // findMostRecentDate,
+    // getLastDayOfMonth,
+    // calculateDuration,
+    // listDatesOfWeekdayInMonth,
+    // getDateDifferences
 }
 
 
