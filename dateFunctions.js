@@ -4,23 +4,60 @@
 // Given an array of objects with `startDate` properties as strings (e.g., "2023-01-01"),
 // map through each array index and calculate the number of days since each date. Use `Date` objects, subtraction for
 // date difference, and `Math.floor` to round to whole days.
+const minute = 1000 * 60;
+const hour = minute * 60;
+const day = hour * 24;
 function calculateDaysSince(datesArray) {
-    
+    let arr = datesArray;
+    console.log("arr", arr);
+   const map1 = arr.map((date, index) => {
+    start = arr[index].startDate;
+    const startDay = Date.parse(start);
+    console.log("start", start);
+    console.log("start day", startDay);
+    const mockDate = Date.parse(new Date('2023-10-15T00:00:00Z'));
+    console.log("mock date", mockDate);
+    let startDays = Math.floor(startDay/day);
+    console.log("start days", startDays);
+    let mockDays = Math.floor(mockDate/day);
+    console.log("mock days", mockDays);
+    let daysSince = mockDays - startDays;
+    console.log(daysSince);
+    if (start == "Invalid Date") {
+        return NaN;
+    } if (start != "Invalid Date") {
+        return daysSince;
+    }
+})
+console.log("map", map1);
+return map1;
 }
-
+startDate = "2023-01-01"
+console.log("function", calculateDaysSince([{startDate}]));
 // Challenge 2: Filter Recent Dates
 // Given an array of date strings, return only the dates within the past 30 days.
 // Use `Date` object and the `filter` array method to find dates between 30 days ago and today.
 
-
+// function filterRecentDates(datesArray) {
+//     const arr = [datesArray];
+//     console.log(arr);
+//     const result = arr.filter(pastThirty);
+//     function pastThirty(date) {
+//         const startDate = new Date().getTime();
+//     const endDate = new Date(startDate - (day*30));
+//     console.log(endDate);
+//      return date >= endDate;
+//     }
+//     return result;
+//  }
 
 // Challenge 3: Get Month Names
 // Given an array of `Date` objects, return an array of month names for each date.
 // Use `getMonth` method to get the month index and map it to a month name array.
-function getMonthNames(datesArray) {
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// function getMonthNames(datesArray) {
+//     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
-}
+// }
 
 // Challenge 4: Sort Dates in Ascending Order
 // Given an array of `Date` objects, return a new array sorted in ascending order.
@@ -56,10 +93,10 @@ function getMonthNames(datesArray) {
 // Challenge 10: Get Day of Week for Dates
 // Given an array of `Date` objects, return an array of the day of the week for each date.
 // Use `getDay` and map each day index to a day name array.
-function getDayOfWeekForDates(datesArray) {
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// function getDayOfWeekForDates(datesArray) {
+//     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
    
-}
+// }
 
 // Challenge 11: Find Most Recent Date
 // Given an array of `Date` objects, return the most recent date.
@@ -88,20 +125,20 @@ function getDayOfWeekForDates(datesArray) {
 
 module.exports = {
     calculateDaysSince,
-    filterRecentDates,
-    getMonthNames,
-    sortDatesAscending,
-    calculateAges,
-    groupDatesByYear,
-    findFirstMonday,
-    checkLeapYears,
-    addDaysToDates,
-    getDayOfWeekForDates,
-    findMostRecentDate,
-    getLastDayOfMonth,
-    calculateDuration,
-    listDatesOfWeekdayInMonth,
-    getDateDifferences
+    // filterRecentDates,
+    // getMonthNames,
+    // sortDatesAscending,
+    // calculateAges,
+    // groupDatesByYear,
+    // findFirstMonday,
+    // checkLeapYears,
+    // addDaysToDates,
+    // getDayOfWeekForDates,
+    // findMostRecentDate,
+    // getLastDayOfMonth,
+    // calculateDuration,
+    // listDatesOfWeekdayInMonth,
+    // getDateDifferences
 }
 
 
