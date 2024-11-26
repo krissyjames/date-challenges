@@ -8,32 +8,48 @@ const minute = 1000 * 60;
 const hour = minute * 60;
 const day = hour * 24;
 function calculateDaysSince(datesArray) {
-    datesArray.map((datesArray) => {
-    let arr = [datesArray];
-    const startDate = new Date(arr);
-    console.log(startDate);
-    // const mockDate = new Date();
-    // console.log(mockDate);
-    let startDays = startDate/day;
-    console.log(startDays);
-    // let mockDays = Math.floor(mockDate/day);
-    // console.log(mockDays);
-    let daysSince = Math.floor((new Date() / day) - startDays);
+    let arr = datesArray;
+    console.log("arr", arr);
+   const map1 = arr.map((date, index) => {
+    start = arr[index].startDate;
+    const startDay = Date.parse(start);
+    console.log("start", start);
+    console.log("start day", startDay);
+    const mockDate = Date.parse(new Date('2023-10-15T00:00:00Z'));
+    console.log("mock date", mockDate);
+    let startDays = Math.floor(startDay/day);
+    console.log("start days", startDays);
+    let mockDays = Math.floor(mockDate/day);
+    console.log("mock days", mockDays);
+    let daysSince = mockDays - startDays;
     console.log(daysSince);
-    if (startDate == "Invalid Date") {
-        return "Invalid Input"
-    } if (startDate != "Invalid Date") {
+    if (start == "Invalid Date") {
+        return NaN;
+    } if (start != "Invalid Date") {
         return daysSince;
     }
 })
-// console.log(mapTest);
+console.log("map", map1);
+return map1;
 }
-// calculateDaysSince();
+startDate = "2023-01-01"
+console.log("function", calculateDaysSince([{startDate}]));
 // Challenge 2: Filter Recent Dates
 // Given an array of date strings, return only the dates within the past 30 days.
 // Use `Date` object and the `filter` array method to find dates between 30 days ago and today.
 
-
+// function filterRecentDates(datesArray) {
+//     const arr = [datesArray];
+//     console.log(arr);
+//     const result = arr.filter(pastThirty);
+//     function pastThirty(date) {
+//         const startDate = new Date().getTime();
+//     const endDate = new Date(startDate - (day*30));
+//     console.log(endDate);
+//      return date >= endDate;
+//     }
+//     return result;
+//  }
 
 // Challenge 3: Get Month Names
 // Given an array of `Date` objects, return an array of month names for each date.
